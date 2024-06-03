@@ -102,6 +102,69 @@
 
     // Start your code here
     // You may move this JS to another file if you wish
+    errorBtns.forEach(button => {
+      button.addEventListener('click', () => {
+        let data = {
+          name: 'Ali M',
+          city: 'San Diego',
+          team: 'Manchester United',
+          food: 'Pizza'
+        };
+        try {
+          switch (button.innerText) {
+            case 'Console Log':
+              console.log(data);
+              break;
+            case 'Console Error':
+              console.error(data);
+              break;
+            case 'Console Count':
+              console.count('Counter');
+              break;
+            case 'Console Warn':
+              console.warn(data);
+              break;
+            case 'Console Assert':
+              console.assert(false, 'Assertion failed');
+              break;
+            case 'Console Clear':
+              console.clear();
+              break;
+            case 'Console Dir':
+              console.dir(data);
+              break;
+            case 'Console dirxml':
+              console.dirxml(data);
+              break;
+            case 'Console Group Start':
+              console.group('Group');
+              console.log('Inside group');
+              break;
+            case 'Console Group End':
+              console.log('Outside group');
+              console.groupEnd();
+              break;
+            case 'Console Table':
+              console.table([data]);
+              break;
+            case 'Start Timer':
+              console.time('Timer');
+              break;
+            case 'End Timer':
+              console.timeEnd('Timer');
+              break;
+            case 'Console Trace':
+              console.trace();
+              break;
+            case 'Trigger a Global Error':
+              throw new CustomError('Boom, get rekt!');
+              break;
+          }
+        } catch (error) {
+          console.error(error);
+        }
+      });
+    });
   </script>
 </body>
 
