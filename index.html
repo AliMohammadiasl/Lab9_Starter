@@ -102,6 +102,14 @@
 
     // Start your code here
     // You may move this JS to another file if you wish
+
+    class CustomError extends Error {
+      constructor(message) {
+        super(message);
+        this.name = 'CustomError';
+      }
+    }
+
     errorBtns.forEach(button => {
       button.addEventListener('click', () => {
         let data = {
